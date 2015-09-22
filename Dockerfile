@@ -19,3 +19,10 @@ RUN PHPMYADMIN_VERSION=4.4.15 && \
 
 COPY .htaccess /var/www/html/.htaccess
 COPY config.inc.php /var/www/html/config.inc.php
+
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+EXPOSE 80
+
+ENTRYPOINT /entrypoint.sh
