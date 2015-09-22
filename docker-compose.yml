@@ -1,0 +1,8 @@
+phpmyadmin:
+  hostname: phpmyadmin
+  container_name: phpmyadmin
+  image: lichti/phpmyadmin
+      - "8999:80"
+  environment:
+      DBADDR: 127.0.0.1
+      DBPORT: "3306"
