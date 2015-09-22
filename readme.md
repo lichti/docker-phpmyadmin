@@ -5,18 +5,18 @@ This container may be used with MySQL or MariaDB linked containers.
 With MySQL:
 ```bash
 docker run --name mysql -e MYSQL_ROOT_PASSWORD=my_password -d mysql
-docker run --rm --link mysql:mysql -p 1234:80 lichti/phpmyadmin
+docker run --rm -it --link mysql:mysql -p 1234:80 lichti/phpmyadmin
 ```
 
 With MariaDB:
 ```bash
 docker run --name mariadb -e MYSQL_ROOT_PASSWORD=my_password -d mariadb
-docker run --rm --link mariadb:mysql -p 1234:80 lichti/phpmyadmin
+docker run --rm -it --link mariadb:mysql -p 1234:80 lichti/phpmyadmin
 ```
 
 With External DB:
 ```bash
-docker run --rm -e DBADDR=192.168.0.1 -e DBPORT=3306 -p 1234:80 lichti/phpmyadmin
+docker run --rm -it -e DBADDR=192.168.0.1 -e DBPORT=3306 -p 1234:80 lichti/phpmyadmin
 ```
 
 
